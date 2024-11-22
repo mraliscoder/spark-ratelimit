@@ -54,13 +54,13 @@ public void setup() {
 ## Installation
 
 Current version is: \
-![Maven Central Version](https://img.shields.io/maven-central/v/com.dpkgsoft/spark-ratelimit)
+![Maven Central Version](https://img.shields.io/maven-central/v/net.edwardcode/spark-ratelimit)
 
 ### Maven
 ```xml
 <dependencies>
     <dependency>
-        <groupId>com.dpkgsoft</groupId>
+        <groupId>net.edwardcode</groupId>
         <artifactId>spark-ratelimit</artifactId>
         <version>VERSION, SEE ABOVE</version>
     </dependency>
@@ -70,6 +70,6 @@ Current version is: \
 ### Gradle
 ```groovy
 dependencies {
-    implementation 'com.dpkgsoft:spark-ratelimit:VERSION'
+    implementation 'net.edwardcode:spark-ratelimit:VERSION'
 }
 ```

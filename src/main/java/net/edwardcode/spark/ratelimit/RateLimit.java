@@ -1,4 +1,4 @@
-package com.dpkgsoft.spark.ratelimit;
+package net.edwardcode.spark.ratelimit;
 
 import spark.Request;
 import spark.Service;

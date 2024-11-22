@@ -3,16 +3,94 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.dpkgsoft</groupId>
+    <groupId>net.edwardcode</groupId>
     <artifactId>spark-ratelimit</artifactId>
-    <version>1.2</version>
+    <version>1.3</version>
+    <name>Spark Rate-limit</name>
+    <description>A library for Spark that allows to easily setup rate limits</description>
+    <url>https://github.com/mraliscoder/spark-ratelimit</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Eduard Ilin</name>
+            <email>me@edwardcode.net</email>
+            <organization>Sculk Ltd.</organization>
+            <organizationUrl>https://edwardcode.net</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/mraliscoder/spark-ratelimit.git</connection>
+        <developerConnection>scm:git:ssh://github.com:mraliscoder/spark-ratelimit.git</developerConnection>
+        <url>https://github.com/mraliscoder/spark-ratelimit/tree/master</url>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.6.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.simplify4u.plugins</groupId>
+                <artifactId>sign-maven-plugin</artifactId>
+                <version>1.1.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
+            <id>central</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
+            <id>central</id>
             <url>https://s01.oss.sonatype.org/content/repositories/releases</url>
         </repository>
     </distributionManagement>
